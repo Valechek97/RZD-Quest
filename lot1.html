@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>Лот №1 — Бизнесмен на день</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <div class="app">
+        <!-- ============================================
+             ШАПКА С ЛОГОТИПОМ РЖД (ЧЁРНЫЙ ФОН)
+             ТОЛЬКО ШАПКА, БЕЗ ЗАГОЛОВКА!
+             ============================================ -->
+        <div class="header">
+            <div class="header-logo">
+                <img src="img/rzd-logo.png" alt="РЖД" />
+            </div>
+            <div class="header-title">
+                <span class="line1">НЕДВИЖИМОСТЬ</span>
+                <span class="line2">ПО ВСЕЙ СТРАНЕ</span>
+            </div>
+        </div>
+
+        <!-- ============================================
+             ОСНОВНОЙ КОНТЕНТ
+             ============================================ -->
+        <div class="content">
+            <div class="progress-block" id="lotProgress">
+                <span><i class="fas fa-compass"></i> Собрано 0 из 5</span>
+                <span>0/5</span>
+            </div>
+
+            <div id="lotContainer"></div>
+
+            <div class="hint" id="lotHint"></div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initLotPage(1);
+        });
+    </script>
+</body>
+</html>
