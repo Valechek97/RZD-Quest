@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>Задание — Бизнесмен на день</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <div class="app">
+        <!-- ХЕАДЕР С ИЗОБРАЖЕНИЕМ -->
+        <div class="header">
+            <img src="img/header-bg.jpg" alt="Бизнесмен на день" />
+        </div>
+
+        <div class="content">
+            <!-- Абзацы с описанием — по центру, как на index.html -->
+            <p class="task-description">
+                Представьте, что у вас есть свой бизнес — какая это сфера?<br/>
+                (кофейня / магазин / бренд одежды)
+            </p>
+
+            <p class="task-description">
+                В этой игре вам необходимо найти для себя перспективные<br/>
+                объекты для размещения вашей прибыльной точки.
+            </p>
+
+            <!-- Баланс — серым цветом -->
+            <p class="task-balance">
+                У вас на счету 500 000 рублей
+            </p>
+
+            <!-- Блок с изображением таблички и описанием задачи -->
+            <div class="task-block">
+                <div class="task-image">
+                    <img src="img/task-tablet.jpg" alt="Табличка с QR-кодом" />
+                </div>
+                <div class="task-text">
+                    <p>
+                        <strong>Задача:</strong> найти на фестивале таблички с номерами объектов, отсканировать QR-код и выбрать — интересно ли вам арендовать этот объект или мимо?
+                    </p>
+                </div>
+            </div>
+
+            <!-- Последняя фраза на странице -->
+            <p class="task-final">
+                Отсканируйте QR-код с таблички лота №1
+            </p>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Проверяем, есть ли сессия с именем
+            if (!loadState() || !state.name) {
+                window.location.href = 'index.html';
+                return;
+            }
+        });
+    </script>
+</body>
+</html>
