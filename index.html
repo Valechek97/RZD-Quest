@@ -9,93 +9,35 @@
 </head>
 <body>
     <div class="app">
-        <!-- ============================================
-             ШАПКА С ЛОГОТИПОМ РЖД (ЧЁРНЫЙ ФОН)
-             ============================================ -->
+        <!-- ХЕАДЕР С ИЗОБРАЖЕНИЕМ -->
         <div class="header">
-            <div class="header-logo">
-                <!-- 
-                    ⚠️ ПОМЕСТИТЕ ЛОГОТИП РЖД В ПАПКУ img/
-                    и укажите правильный путь к файлу
-                -->
-                <img src="img/rzd-logo.png" alt="РЖД" />
-            </div>
-            <div class="header-title">
-                НЕДВИЖИМОСТЬ ПО ВСЕЙ СТРАНЕ
-            </div>
+            <img src="img/header-bg.jpg" alt="Бизнесмен на день" />
         </div>
 
-        <!-- ============================================
-             ОСНОВНОЙ КОНТЕНТ
-             ============================================ -->
         <div class="content">
-            <!-- Крупный заголовок "КВЕСТ-ИГРА" и "БИЗНЕСМЕН НА ДЕНЬ" -->
-            <div class="main-title">
+            <!-- Заголовок — ЧЁРНЫЙ -->
+            <div class="start-title">
                 <span class="line1">КВЕСТ-ИГРА</span>
                 <span class="line2">«БИЗНЕСМЕН НА ДЕНЬ»</span>
             </div>
 
-            <!-- Описание игры -->
+            <!-- Описание — крупнее, тёмно-серый, по центру -->
             <p class="start-description">
-                Представьте, что у вас есть свой бизнес: какая это сфера? (кофейня/магазин/бренд одежды).<br/>
-                В этой игре вам необходимо найти для себя перспективные объекты для размещения вашей прибыльной точки.
-            </p>
-            <p class="start-description" style="margin-top:-8px;">
-                Определи свой тип бизнесмена, принимая решение о приобретении объекта от компании 
-                <strong>«РЖД управление имуществом»</strong>.
+                Определи свой тип предпринимателя, принимая решения<br/>
+                о приобретении объектов от компании<br/>
+                «РЖД управление имуществом»
             </p>
 
-            <!-- КАРТОЧКА БИЗНЕСМЕНА (пустая таблица) -->
-            <div class="business-card-title">КАРТОЧКА БИЗНЕСМЕНА</div>
-            <div class="business-card-balance">(у вас на счету 1 000 000 рублей)</div>
+            <!-- Подпись перед полем ввода -->
+            <div class="input-label">Имя бизнесмена</div>
 
-            <table class="business-card-table">
-                <thead>
-                    <tr>
-                        <th>№</th>
-                        <th>Объект</th>
-                        <th>Решение</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>—</td>
-                        <td class="status-empty">—</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>—</td>
-                        <td class="status-empty">—</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>—</td>
-                        <td class="status-empty">—</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>—</td>
-                        <td class="status-empty">—</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>—</td>
-                        <td class="status-empty">—</td>
-                    </tr>
-                </tbody>
-            </table>
+            <!-- Поле ввода имени на светло-сером фоне -->
+            <div class="input-wrapper">
+                <input type="text" id="playerName" class="input-name" placeholder="Введите ваше имя" />
+            </div>
 
-            <!-- Задача -->
-            <p class="start-task">
-                <strong>Задача:</strong> найти на фестивале таблички с номера объектов, 
-                отсканировать QR-код и выбрать интересно ли вам арендовать этот объект или мимо?
-            </p>
-
-            <!-- Форма ввода имени -->
-            <input type="text" id="playerName" class="input-name" placeholder="Имя бизнесмена" />
-
-            <button class="btn-start" id="startBtn">Начать</button>
+            <!-- Кнопка "НАЧАТЬ" — только подчёркнутые красные буквы -->
+            <button class="btn-start-text" id="startBtn">НАЧАТЬ</button>
 
             <div style="margin-top:16px; font-size:13px; color:#8a8276; text-align:center;">
                 * сессия сохраняется на устройстве

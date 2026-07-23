@@ -1,0 +1,77 @@
+const LOTS = [
+    {
+        id: 1,
+        title: "Нежилое помещение г.Самара",
+        location: "Самарская область, г Самара, пл Комсомольская, д. 1",
+        area: "42 м²",
+        price: "25 005.12 ₽/мес",
+        tag: "safe",
+        images: [
+            "img/lots/lot1/photo1.jpg",
+            "img/lots/lot1/photo2.jpg",
+            "img/lots/lot1/photo3.jpg",
+            "img/lots/lot1/photo4.jpg",
+            "img/lots/lot1/photo5.jpg"
+        ]
+    },
+    {
+        id: 2,
+        title: "Площади под продажу мороженого в Санкт-Петербурге и Ленинградской области",
+        location: "Санкт-Петербург, пр-кт Заневский, д. 73 л. А",
+        area: "18 м²",
+        price: "49 921.18 ₽/мес.",
+        tag: "capital",
+        images: [
+            "img/lots/lot2/photo1.jpg",
+            "img/lots/lot2/photo2.jpg",
+            "img/lots/lot2/photo3.jpg",
+            "img/lots/lot2/photo4.jpg",
+            "img/lots/lot2/photo5.jpg"
+        ]
+    },
+    {
+        id: 3,
+        title: "Cкладское помещение г. Топки",
+        location: "Кемеровская область, р-н Топкинский, г Топки, ул Пролетарская, д. 109.",
+        area: "443,7 м²",
+        price: "73 210.50 ₽/мес.",
+        tag: "neutral",
+        images: [
+            "img/lots/lot3/photo1.jpg",
+            "img/lots/lot3/photo2.jpg",
+            "img/lots/lot3/photo3.jpg",
+            "img/lots/lot3/photo4.jpg",
+            "img/lots/lot3/photo5.jpg"
+        ]
+    },
+    {
+        id: 4,
+        title: "Офис 300 кв. м в здании Балтийского вокзала. Отдельный вход, метро рядом",
+        location: "Санкт-Петербург, наб. Обводного канала, д. 120.",
+        area: "300.6 м²",
+        price: "450 000 ₽/мес",
+        tag: "risky",
+        images: [
+            "img/lots/lot4/photo1.jpg",
+            "img/lots/lot4/photo2.jpg",
+            "img/lots/lot4/photo3.jpg",
+            "img/lots/lot4/photo4.jpg",
+            "img/lots/lot4/photo5.jpg"
+        ]
+    },
+    {
+        id: 5,
+        title: "Место под вендинг г. Ростов-на-Дону",
+        location: "Ростовская область, г Ростов-на-Дону, ул Гусева, д. 2а/5",
+        area: " м²",
+        price: "9 235.40 ₽/мес.",
+        tag: "risky",
+        images: [
+            "img/lots/lot5/photo1.jpg",
+            "img/lots/lot5/photo2.jpg",
+            "img/lots/lot5/photo3.jpg",
+            "img/lots/lot5/photo4.jpg",
+            "img/lots/lot5/photo5.jpg"
+        ]
+    }
+];
