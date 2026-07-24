@@ -397,7 +397,8 @@ function initLotPage(lotId) {
     if (progress) progress.style.display = 'flex';
     if (hint) hint.style.display = 'block';
 
-    // --- ЛОГИКА: проверяем, что лот идёт по порядку ---
+    // --- ЛОГИКА ПРОВЕРКИ ПОРЯДКА ---
+    // Находим первый невыбранный лот
     let nextLotId = null;
     for (const lot of LOTS) {
         if (!getChoiceForLot(lot.id)) {
@@ -406,10 +407,29 @@ function initLotPage(lotId) {
         }
     }
 
-    // Если текущий лот НЕ является следующим по порядку — перенаправляем
+    // Если текущий лот НЕ является следующим по порядку
     if (nextLotId !== null && lotId !== nextLotId) {
+        // Показываем alert с сообщением
         alert(`🔍 Вы должны пройти лоты по порядку! Сейчас отсканируйте QR-код Лота №${nextLotId}.`);
-        window.location.href = `lot${nextLotId}.html`;
+        
+        // После закрытия alert — просто показываем страницу с сообщением,
+        // что этот лот пока недоступен
+        const container = document.getElementById('lotContainer');
+        if (container) {
+            container.innerHTML = `
+                <div class="lot-card" style="text-align:center; padding:40px 20px;">
+                    <div style="font-size:48px; margin-bottom:16px;">🔒</div>
+                    <h3 style="font-size:20px; color:#1e1a16; margin-bottom:8px;">Этот лот пока недоступен</h3>
+                    <p style="color:#6b6560; font-size:15px; line-height:1.6;">
+                        Вы должны пройти лоты по порядку.<br/>
+                        Сейчас отсканируйте QR-код <strong>Лота №${nextLotId}</strong>.
+                    </p>
+                </div>
+            `;
+        }
+        // Скрываем прогресс и подсказки
+        if (progress) progress.style.display = 'none';
+        if (hint) hint.style.display = 'none';
         return;
     }
 
