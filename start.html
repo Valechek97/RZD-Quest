@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>Начните квест — Бизнесмен на день</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <div class="app">
+        <!-- ХЕАДЕР С ИЗОБРАЖЕНИЕМ -->
+        <div class="header">
+            <img src="img/header-bg.jpg" alt="Бизнесмен на день" />
+        </div>
+
+        <div class="content">
+            <!-- Заголовок -->
+            <div class="start-title">
+                <span class="line1">КВЕСТ ИГРА</span>
+                <span class="line2">«БИЗНЕСМЕН НА ДЕНЬ»</span>
+            </div>
+
+            <!-- Описание — с приглашением к шатру -->
+            <p class="start-description">
+                Чтобы начать игру и получить свой типаж бизнесмена, пройдите к шатру «РЖД. Управление имуществом». Там вы получите стартовый QR-код и инструкцию
+            </p>
+
+            <div class="input-label">Имя бизнесмена</div>
+
+            <div class="input-wrapper">
+                <input type="text" id="playerName" class="input-name" placeholder="Введите ваше имя" />
+            </div>
+
+            <button class="btn-start-text" id="startBtn">НАЧАТЬ</button>
+
+            <div style="margin-top:16px; font-size:13px; color:#8a8276; text-align:center;">
+                * сессия сохраняется на устройстве
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Используем ту же логику, что и на index.html
+            // но после ввода имени перенаправляем на task.html
+            const startBtn = document.getElementById('startBtn');
+            const nameInput = document.getElementById('playerName');
+
+            // Проверяем, есть ли уже сессия
+            if (loadState() && state.name) {
+                nameInput.value = state.name;
+                startBtn.textContent = 'Продолжить';
+            }
+
+            startBtn.addEventListener('click', function() {
+                const name = nameInput.value.trim();
+
+                if (!name) {
+                    alert('Пожалуйста, введите ваше имя');
+                    return;
+                }
+
+                // Создаём или обновляем сессию
+                if (!loadState() || !state.name) {
+                    resetState();
+                }
+                state.name = name;
+                saveState();
+
+                // Переходим на страницу с заданием
+                window.location.href = 'task.html';
+            });
+        });
+    </script>
+</body>
+</html>
