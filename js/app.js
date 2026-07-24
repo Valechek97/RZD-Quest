@@ -359,9 +359,9 @@ function initGallery(lotId) {
 // ---------- ФУНКЦИИ ДЛЯ СТРАНИЦ ----------
 
 function initLotPage(lotId) {
-    // Если нет сессии — редирект на старт
+    // Если нет сессии — редирект на start.html
     if (!loadState() || !state.name) {
-        window.location.href = `index.html?redirect=${lotId}`;
+        window.location.href = 'start.html';
         return;
     }
 
@@ -384,7 +384,6 @@ function initLotPage(lotId) {
                 </div>
             `;
         }
-        // Скрываем прогресс и подсказки
         const progress = document.getElementById('lotProgress');
         const hint = document.getElementById('lotHint');
         if (progress) progress.style.display = 'none';
@@ -392,7 +391,7 @@ function initLotPage(lotId) {
         return;
     }
 
-    // Показываем прогресс и подсказки (если они были скрыты)
+    // Показываем прогресс и подсказки
     const progress = document.getElementById('lotProgress');
     const hint = document.getElementById('lotHint');
     if (progress) progress.style.display = 'flex';
@@ -634,7 +633,7 @@ function handleChoice(lotId, choice) {
 
 function initResultPage() {
     if (!loadState() || !state.name) {
-        window.location.href = 'index.html';
+        window.location.href = 'start.html';
         return;
     }
 
@@ -797,31 +796,6 @@ function initStartPage() {
 
     if (state.name) {
         nameInput.value = state.name;
-    }
-
-    const urlParams = new URLSearchParams(window.location.search);
-    const redirect = urlParams.get('redirect');
-    if (redirect) {
-        setTimeout(() => {
-            const message = document.createElement('div');
-            message.className = 'start-message';
-            message.style.cssText = `
-                margin-top: 16px;
-                padding: 16px;
-                background: #fff3cd;
-                border-radius: 16px;
-                text-align: center;
-                font-size: 15px;
-                color: #856404;
-                border-left: 4px solid #ffc107;
-            `;
-            message.innerHTML = `
-                <i class="fas fa-exclamation-triangle" style="color:#ffc107; font-size:24px; display:block; margin-bottom:8px;"></i>
-                Чтобы открыть Лот №${redirect}, нужно сначала <strong>ввести имя</strong>.
-            `;
-            const container = document.querySelector('.content');
-            container.appendChild(message);
-        }, 100);
     }
 }
 
